@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Markdown Preview</title>
+    <script src="marked.js" ></script>
+
+
+    <script>
+
+      function updatePreview() {
+        let previewElement = document.getElementById("preview");
+        let editorValue = document.getElementById("editor").value;
+      let markedUpHTML = marked(editorValue);
+      previewElement.innerHTML = markedUpHTML;
+      } 
+
+
+      function setDefault(){
+        let defaultText = ` 
+# Markdown Preview
+## a markdown previewer
+[Learn more about Geovany](https://usefulprogrammer.org/).
+<dl>
+<dt> Definition list </dt>
+<dd> Is somenthing people use sometimes. </dd>
+
+<dt> Markdown in HTML </dt>
+<dd> Does *not* work **very** well.use HTML <em>tags</em>.</dd>
+</dl>
+
+\`Thank you for watching\`
+
+\`\`\`
+function exampleOf() {
+  return multiLineCodeBlock;
+  
+}
+\`\`\`
+
+
+-  A 
+-  B
+- C
+-  D
+- E
+- G 
+- F
+
+
+
+> Learn to be like Water  
+
+
+
+![Water](https://webypress.b-cdn.net/wp-content/uploads/2020/03/The-Ultimate-Coronavirus-Small-Business-Guide-WordPress-Tools.png)
+
+**Bolded Text**`;
+        let editorfield = document.getElementById("editor");
+        let previewElement = document.getElementById("preview");
+        editorfield.value = defaultText;
+        previewElement.innerHTML = marked(defaultText);
+      }
+    </script>
+
+  </head>
+  <body onload= "setDefault()" class="bg-sucess">
+    <div class="container-fluid">
+      <div class="row">
+      <div class="col text-center text-white bg-dark">
+    <h1>Markdown Previewer By Geovany </h1>
+</div>
+</div>
+<div class="row">
+  <div class="col-6 bg-danger">
+    <p> The editor will be there <p>
+      <div class="form-group">
+<textarea id="editor" onkeyup="updatePreview()"class="form-control"></textarea>
+</div> 
+
+</div>
+  <div class="col-6 bg-primary">
+    <p> The mark will be here </p>
+    <div id="preview"></div>
+  </div>
+  </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src= "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
